@@ -8,3 +8,5 @@
 <p><%=@sneaker.description%></p>
 
 <%= link_to "Delete", sneaker_path(@sneaker), method: :delete %>
+<%= link_to "Buy", sneaker_orders_path(@sneaker), method: :post %>
+
