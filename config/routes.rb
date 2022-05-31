@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :sneakers do
-    resources :orders, only: %i[new create edit]
+    resources :orders, only: %i[new create destroy]
   end
-
 end
