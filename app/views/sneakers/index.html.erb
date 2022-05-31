@@ -1,0 +1,6 @@
+<h1>SNEAKERS</h1>
+
+<% @sneakers.each do |sneaker| %>
+  <p><%= sneaker.description %></p>
+  <p><%= link_to "Details", sneaker_path(sneaker) %>
+<% end %>

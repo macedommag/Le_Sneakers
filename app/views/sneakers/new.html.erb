@@ -1,0 +1,11 @@
+ <h1>Add new sneaker</h1>
+        <%= simple_form_for @sneaker do |f| %>
+          <%= f.input :size, placeholder: 'Size' %>
+          <%= f.input :model, placeholder: 'Model' %>
+          <%= f.input :brand, placeholder: 'Brand' %>
+          <%= f.input :condition, placeholder: 'Condition' %>
+          <%= f.input :price, placeholder: 'Price' %>
+          <%= f.input :inventory, placeholder: 'Inventory' %>
+          <%= f.input :description, placeholder: 'Description' %>
+          <%= f.submit class: 'btn btn-primary' %>
+        <% end %>

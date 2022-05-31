@@ -1,0 +1,10 @@
+<h1><%=@sneaker.model%></h1>
+
+<p><%=@sneaker.size%></p>
+<p><%=@sneaker.brand%></p>
+<p><%=@sneaker.condition%></p>
+<p><%=@sneaker.price%></p>
+<p><%=@sneaker.inventory%></p>
+<p><%=@sneaker.description%></p>
+
+<%= link_to "Delete", sneaker_path(@sneaker), method: :delete %>
