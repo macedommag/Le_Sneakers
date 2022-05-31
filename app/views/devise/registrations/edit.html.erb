@@ -5,12 +5,9 @@
 
   <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true %>
-<<<<<<< HEAD
-=======
     <%= f.input :name, required: true, autofocus: true %>
     <%= f.input :address, required: true, autofocus: true %>
     <%= f.input :contact, required: true, autofocus: true %>
->>>>>>> 80865ec1fd826a43d1cadff11269fda5092ae45c
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
