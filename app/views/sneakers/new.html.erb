@@ -7,5 +7,6 @@
           <%= f.input :price, placeholder: 'Price' %>
           <%= f.input :amount, placeholder: 'Amount' %>
           <%= f.input :description, placeholder: 'Description' %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
           <%= f.submit class: 'btn btn-primary' %>
         <% end %>
