@@ -1,13 +1,15 @@
 class OrdersController < ApplicationController
 
-  def index
+  def show
+    @order = Order.find(params[:id])
+
   end
 
   def create
     @sneaker = Sneaker.find(params[:sneaker_id])
     @order = Order.new(sneaker: @sneaker, user: current_user)
     @order.save
-    redirect_to sneakers_path
+    redirect_to order_path(@order)
   end
 
   def destroy
