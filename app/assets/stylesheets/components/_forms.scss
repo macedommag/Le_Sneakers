@@ -3,7 +3,13 @@
   display: flex;
   gap: 20px;
 
-}img{
-	max-width:100%;
+}
+.form-img{
+	//max-width:100%;
 	height:auto;
+  width: 50%;
+  img {
+    width: 450px;
+    height: 450px;
+  }
 }
