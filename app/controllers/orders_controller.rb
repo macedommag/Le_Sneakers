@@ -10,4 +10,7 @@ class OrdersController < ApplicationController
     @order.save
     redirect_to order_path(@order)
   end
+
+  def destroy
+  end
 end
