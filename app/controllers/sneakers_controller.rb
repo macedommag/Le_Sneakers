@@ -3,7 +3,11 @@ class SneakersController < ApplicationController
 
 
   def index
-    @sneakers = Sneaker.all
+    sneakers = Sneaker.all
+
+    @sneakers =  sneakers.select do |sneaker|
+      sneaker.orders.empty?
+    end
   end
 
   def show

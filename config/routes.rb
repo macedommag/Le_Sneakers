@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :sneakers do
     resources :orders, only: %i[create]
   end
+  resources :orders, only: %i[destroy show]
 end

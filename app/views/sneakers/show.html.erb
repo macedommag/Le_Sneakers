@@ -7,6 +7,11 @@
 <p><%=@sneaker.inventory%></p>
 <p><%=@sneaker.description%></p>
 
-<%= link_to "Delete", sneaker_path(@sneaker), method: :delete %>
-<%= link_to "Buy", sneaker_orders_path(@sneaker), method: :post %>
-
+ <% if @sneaker.user == current_user %>
+  <%= link_to "Delete", sneaker_path(@sneaker), method: :delete,  data: { confirm: 'Are you sure you want delete?' } %>
+  <% else %>
+  <%= link_to "Buy", sneaker_orders_path(@sneaker), method: :post, data: { confirm: 'Are you sure you want to buy?' } %>
+<% end %>
+<br>
+<br>
+<p><%= link_to "Back", sneakers_path %></p>
