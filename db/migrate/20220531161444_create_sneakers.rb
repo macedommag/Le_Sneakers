@@ -7,7 +7,7 @@ class CreateSneakers < ActiveRecord::Migration[6.1]
       t.string :brand
       t.string :condition
       t.integer :price
-      t.integer :inventory
+      t.integer :amount
       t.text :description
 
       t.timestamps
