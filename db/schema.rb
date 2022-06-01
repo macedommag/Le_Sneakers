@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2022_05_31_161858) do
     t.string "brand"
     t.string "condition"
     t.integer "price"
-    t.integer "inventory"
+    t.integer "amount"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
