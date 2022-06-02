@@ -2,13 +2,14 @@
 
 <p><%=@sneaker.size%></p>
 <p><%=@sneaker.brand%></p>
-<p>Condition:<%=@sneaker.condition%></p>
-<p>R$<%=@sneaker.price%></p>
+<p><%=@sneaker.condition%></p>
+<p><%=@sneaker.price%></p>
 <p><%=@sneaker.amount%></p>
 <p><%=@sneaker.description%></p>
+
 <% if @sneaker.photos.attached? %>
-<% @sneaker.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% @sneaker.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
 <% end %>
  <% if @sneaker.user == current_user %>

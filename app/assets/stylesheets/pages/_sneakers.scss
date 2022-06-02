@@ -1,0 +1,34 @@
+.sneaker-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.sneakers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.sneaker-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 620px) {
+  .sneakers-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 621px) and (max-width: 970px) {
+  .sneakers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
