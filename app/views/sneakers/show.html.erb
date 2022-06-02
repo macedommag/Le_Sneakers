@@ -1,7 +1,7 @@
 <div class="card" style="width: 18rem;">
   <% if @sneaker.photos.attached? %>
     <% @sneaker.photos.each do |photo| %>
-       <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
   <% end %>
   <h1> Model: <%=@sneaker.model%></h1>
