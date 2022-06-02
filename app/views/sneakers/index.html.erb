@@ -1,20 +1,22 @@
-<h1 class="my-4">SNEAKERS</h1>
-<h3><%= link_to "New sneaker", new_sneaker_path, class:"btn btn-danger" %> </h3>
-<div class="container my-5 sneaker-container">
- <div class="sneakers-grid">
-    <% @sneakers.each do |sneaker| %>
-      <div>
-        <div class="card my-4" style="width: 18rem;">
-            <% sneaker.photos.each do |photo| %>
-              <%= cl_image_tag photo.key, crop: :fill, class: "sneaker-image" %>
-            <% end %>
-            <div class="card-body">
-              <h5 class="card-title"><strong>Model:</strong> <%= sneaker.model %></h5>
-              <h5 class="card-title"><strong>Price:</strong> <%= number_to_currency(sneaker.price, unit: "R$", separator: ",", delimiter: "") %></h5>
-              <p><%= link_to "Details", sneaker_path(sneaker), class:"text-decoration-none" %>
+
+
+    <div class="container my-5 sneaker-container">
+    <h2>SNEAKERS</h2>
+    <h3><%= link_to "New sneaker", new_sneaker_path, class:"btn btn-danger" %></h3>
+      <div class="sneakers-grid">
+        <% @sneakers.each do |sneaker| %>
+          <div>
+            <div class="card my-4" style="width: 18rem;">
+              <% sneaker.photos.each do |photo| %>
+                <%= cl_image_tag photo.key, crop: :fill, class: "sneaker-image" %>
+              <% end %>
+              <div class="card-body">
+                <h6 class="card-title"><strong>Model:</strong> <%= sneaker.model %></h6>
+                <h6 class="card-title"><strong>Price:</strong> <%= number_to_currency(sneaker.price, unit: "R$", separator: ",", delimiter: "") %></h6>
+                <p><%= link_to "Details", sneaker_path(sneaker), class:"text-decoration-none" %>
+              </div>
             </div>
+          </div>
+        <% end %>
         </div>
       </div>
-    <% end %>
-  </div>
-</div>
