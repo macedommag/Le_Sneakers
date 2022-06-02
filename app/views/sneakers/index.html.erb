@@ -1,8 +1,21 @@
-<h1>SNEAKERS</h1>
-
-<% @sneakers.each do |sneaker| %>
-  <p><%= sneaker.model %></p>
-  <p><%= link_to "Details", sneaker_path(sneaker) %>
-<% end %>
-
-<h3><%= link_to "Put a new sneaker", new_sneaker_path %> </h3>
+<h1 class="my-4">SNEAKERS</h1>
+<h3><%= link_to "New sneaker", new_sneaker_path, class:"btn btn-danger" %> </h3>
+<div class="container my-5 sneaker-container">
+ <div class="sneakers-grid">
+    <% @sneakers.each do |sneaker| %>
+      <div>
+        <div class="card my-4" style="width: 18rem;">
+            <% sneaker.photos.each do |photo| %>
+              <%= cl_image_tag photo.key, crop: :fill, class: "sneaker-image" %>
+            <% end %>
+            <div class="card-body">
+              <h5 class="card-title">Model: <%= sneaker.model %></h5>
+              <h5 class="card-title">Price: R$ <%= sneaker.price %></h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p><%= link_to "Details", sneaker_path(sneaker), class:"text-decoration-none" %>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
