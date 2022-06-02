@@ -9,9 +9,8 @@
               <%= cl_image_tag photo.key, crop: :fill, class: "sneaker-image" %>
             <% end %>
             <div class="card-body">
-              <h5 class="card-title">Model: <%= sneaker.model %></h5>
-              <h5 class="card-title">Price: R$ <%= sneaker.price %></h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title"><strong>Model:</strong> <%= sneaker.model %></h5>
+              <h5 class="card-title"><strong>Price:</strong> <%= number_to_currency(sneaker.price, unit: "R$", separator: ",", delimiter: "") %></h5>
               <p><%= link_to "Details", sneaker_path(sneaker), class:"text-decoration-none" %>
             </div>
         </div>
