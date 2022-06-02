@@ -1,12 +1,38 @@
- <h1>Add new sneaker</h1>
+
+
+  <div class="container form-inputs my-5">
+    <div container class= >
+      <h2>Add new sneaker</h2>
+    </div>
         <%= simple_form_for @sneaker do |f| %>
-          <%= f.input :size, placeholder: 'Size' %>
-          <%= f.input :model, placeholder: 'Model' %>
-          <%= f.input :brand, placeholder: 'Brand' %>
-          <%= f.input :condition, placeholder: 'Condition' %>
-          <%= f.input :price, placeholder: 'Price' %>
-          <%= f.input :amount, placeholder: 'Amount' %>
+          <div class= row>
+              <div class="col">
+                <%= f.input :size, placeholder: 'Size' %>
+              </div>
+              <div class="col">
+                <%= f.input :model, placeholder: 'Model' %>
+              </div>
+          </div>
+          <div class= row>
+            <div class="col">
+              <%= f.input :brand, placeholder: 'Brand' %>
+            </div>
+            <div class="col">
+              <%= f.input :condition, placeholder: 'Condition' %>
+            </div>
+          </div>
+          <div class= row>
+            <div class="col">
+              <%= f.input :price, placeholder: 'Price' %>
+            </div>
+            <div class="col">
+              <%= f.input :amount, placeholder: 'Amount' %>
+            </div>
+          </div>
           <%= f.input :description, placeholder: 'Description' %>
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-          <%= f.submit class: 'btn btn-primary' %>
+          <%= f.submit class: 'btn btn-flat' %>
+          <%=link_to "Back", sneakers_path, class: "text-decoration-none"%>
+
         <% end %>
+  </div>

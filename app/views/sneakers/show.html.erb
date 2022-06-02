@@ -1,16 +1,15 @@
 <div class="card" style="width: 18rem;">
   <% if @sneaker.photos.attached? %>
-   <% @sneaker.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% @sneaker.photos.each do |photo| %>
+       <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
   <% end %>
-<% end %>
   <h1> Model: <%=@sneaker.model%></h1>
   <p><strong> Size: </strong><%=@sneaker.size%></p>
   <p><strong> Brand: </strong><%=@sneaker.brand%></p>
   <p><strong> Condition: </strong> <%=@sneaker.condition%></p>
   <p><strong> Description: </strong><%=@sneaker.description%></p>
   <p><strong> Amount: </strong><%=@sneaker.amount%></p>
-
 
  <% if @sneaker.user == current_user %>
   <%= link_to "Delete", sneaker_path(@sneaker), method: :delete,  data: { confirm: 'Are you sure you want delete?' } %>

@@ -1,18 +1,55 @@
-<div class="container">
-  <h1>ORDERS</h1>
+<div class="container border border-4 my-5">
 
-  <p>Congratulations on the purchase, thanks for the preference!!</p>
+  <h1>ORDER</h1>
+  <div class="border border-4">
+    <h4>Congratulations on the purchase, thanks for the preference!!</h4>
+  </div>
+  <div class="border border-4 my-3">
+    <div class="row">
+      <div class="col-6">
+        <p>Model: <%=@order.sneaker.model%></p>
+      </div>
+      <div class="col-6">
+        <p>Size: <%=@order.sneaker.size%></p>
+      </div>
+    </div>
 
-  <p>Model: <%=@order.sneaker.model%></p>
-  <p>Size: <%=@order.sneaker.size%></p>
-  <p>Brand: <%=@order.sneaker.brand%></p>
-  <p>Condition: <%=@order.sneaker.condition%></p>
-  <p>Price: <%=@order.sneaker.price%></p>
-  <p>Amount: <%=@order.sneaker.amount%></p>
-  <p>Description: <%=@order.sneaker.description%></p>
+    <div class="row">
+      <div class="col-6">
+        <p>Brand: <%=@order.sneaker.brand%></p>
+      </div>
+      <div class="col-6">
+        <p>Condition: <%=@order.sneaker.condition%></p>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-6">
+        <p>Price: <%=@order.sneaker.price%></p>
+      </div>
+      <div class="col-6">
+        <p>Amount: <%=@order.sneaker.amount%></p>
+      </div>
+    </div>
 
+    <p>Description: <%=@order.sneaker.description%></p>
+    
+  </div>
+    
+  <%= link_to "Back Home", sneakers_path, class: "btn btn-danger my-3" %>
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   
 
   
-  <%= link_to "Back Home", sneakers_path, class: "btn btn-danger" %>
- </div>
