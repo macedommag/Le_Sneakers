@@ -1,10 +1,18 @@
-<h1>ORDERS</h1>
+<div class="container">
+  <h1>ORDERS</h1>
 
-<p>Parabéns sua aquisição foi realizada com sucesso!</p>
+  <p>Congratulations on the purchase, thanks for the preference!!</p>
 
-<%=@order.sneaker.model%>
+  <p>Model: <%=@order.sneaker.model%></p>
+  <p>Size: <%=@order.sneaker.size%></p>
+  <p>Brand: <%=@order.sneaker.brand%></p>
+  <p>Condition: <%=@order.sneaker.condition%></p>
+  <p>Price: <%=@order.sneaker.price%></p>
+  <p>Amount: <%=@order.sneaker.amount%></p>
+  <p>Description: <%=@order.sneaker.description%></p>
 
-<br>
-<br>
-<br>
- <%=link_to "Back Home", sneakers_path%>
+  
+
+  
+  <%= link_to "Back Home", sneakers_path, class: "btn btn-danger" %>
+ </div>
