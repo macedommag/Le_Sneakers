@@ -1,22 +1,29 @@
-<h1><%=@sneaker.model%></h1>
-
-<p><%=@sneaker.size%></p>
-<p><%=@sneaker.brand%></p>
-<p><%=@sneaker.condition%></p>
-<p><%=@sneaker.price%></p>
-<p><%=@sneaker.amount%></p>
-<p><%=@sneaker.description%></p>
-
-<% if @sneaker.photos.attached? %>
-  <% @sneaker.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-<% end %>
+<div class="container user-form mt-5">
+     <h1><% if @sneaker.photos.attached? %>
+      <% @sneaker.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 500, crop: :fill %>
+      <% end %>
+    <% end %>
+    </h1>
+   <div class="container col-md-6">
+    <h2> Model: <%=@sneaker.model%></h2>
+    <p><strong> Size: </strong><%=@sneaker.size%></p>
+    <p><strong> Brand: </strong><%=@sneaker.brand%></p>
+    <p><strong> Condition: </strong> <%=@sneaker.condition%></p>
+    <p><strong> Description: </strong><%=@sneaker.description%></p>
+    <p><strong> Amount: </strong><%=@sneaker.amount%></p>
+  </div>
+</div>
+<br>
  <% if @sneaker.user == current_user %>
-  <%= link_to "Delete", sneaker_path(@sneaker), method: :delete,  data: { confirm: 'Are you sure you want delete?' } %>
+  <%= link_to "Delete", sneaker_path(@sneaker), method: :delete,  data: { confirm: 'Are you sure you want delete?' }, class:'btn btn-danger'%>
   <% else %>
-  <%= link_to "Buy", sneaker_orders_path(@sneaker), method: :post, data: { confirm: 'Are you sure you want to buy?' } %>
-<% end %>
+  <%= link_to "Buy", sneaker_orders_path(@sneaker), method: :post, data: { confirm: 'Are you sure you want to buy?' }, class:'btn btn-danger'%>
+  <% end %>
+
+  <div class="card-body">
+    <a href="/sneakers" class="text-decoration-none">Back</a>
+  </div>
+</div>
 <br>
 <br>
-<p><%= link_to "Back", sneakers_path %></p>
