@@ -31,7 +31,7 @@
       <p><strong> Amount: </strong><%=@sneaker.amount%></p>
       <div class="d-flex justify-content-evenly align-items-center">
         <% if @sneaker.user == current_user %>
-          <%= link_to "Delete", sneaker_path(@sneaker), method: :delete,  data: { confirm: 'Are you sure you want delete?' }, class:'btn btn-danger'%>
+          <%= link_to "Delete", sneaker_path(@sneaker), method: :delete,  data: { confirm: 'Are you sure you want delete?' }, class:'btn btn-flat'%>
         <% else %>
           <%= link_to "Buy", sneaker_orders_path(@sneaker), method: :post, data: { confirm: 'Are you sure you want to buy?' }, class:'btn btn-flat'%>
         <% end %>
