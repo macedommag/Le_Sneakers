@@ -1,20 +1,24 @@
 <div class="container">
   <div class="d-flex justify-content-center container mt-5">
-        <div class="card p-3 bg-white"><i class="fa fa-apple"></i>
+        <div class="card p-3 bg-white center"><i class="fa fa-apple"></i>
+             <div class="d-flex justify-content-center mt-0 text-uppercase">
+              <h6>Le Sneakers</h6>
+             </div>
             <div class="about-product text-center mt-2"><%= image_tag "foto2.jpg", alt: "gengar", width: 400%>
-                <div class="mt-2">
+                <div class= "mt-2">
                     <h4>Congratulations!</h4>
                     <h6 class="mt-0 text-black-50">Seu pedido foi aprovado.</h6>
                 </div>
             </div>
             <div class="stats mt-4">
-                <div class="d-flex justify-content-between p-price"><p><strong>Model:</strong> <%=@order.sneaker.model%></p></div>
+                <div class="d-flex justify-content-between p-price "><p><strong>Model:</strong> <%= @order.sneaker.model%></p></div>
                 <div class="d-flex justify-content-between p-price"><p><strong>Size:</strong> <%=@order.sneaker.size%></p></div>
                 <div class="d-flex justify-content-between p-price"><p><strong>Brand:</strong> <%=@order.sneaker.brand%></p></div>
                 <div class="d-flex justify-content-between p-price"><p><strong>Condition:</strong> <%=@order.sneaker.condition%></p></div>
                 <div class="d-flex justify-content-between p-price"><p><strong>Amount:</strong> <%=@order.sneaker.amount%></p></div>
             </div>
-            <div class="d-flex justify-content-between total font-weight-bold mt-4"><span>Total</span><span><%=@order.sneaker.price%></span></div>
-            <%= link_to "Back Home", sneakers_path, class: "btn btn-danger my-3" %>
+            <div class="d-flex justify-content-between total font-weight-bold mt-4"><strong>Total</strong> <%= number_to_currency(@order.sneaker.price, unit: "R$", separator: ",", delimiter: "") %></div>
+
+            <%= link_to "Back Home", sneakers_path, class: "btn btn-flat my-3" %>
         </div>
     </div>
