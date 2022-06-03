@@ -1,12 +1,16 @@
 class SneakersController < ApplicationController
   before_action :set_sneaker, only: [:show, :edit, :destroy]
 
-
   def index
     sneakers = Sneaker.all
 
-    @sneakers =  sneakers.select do |sneaker|
-      sneaker.orders.empty?
+    @sneakers = Sneaker.includes(:orders).where(orders: { sneaker_id: nil })
+
+    if params[:brand].present?
+      sql_query = "brand ILIKE :query"
+      @sneakers = @sneakers.where(sql_query, query: "%#{params[:brand]}%")
+    else
+      @sneakers
     end
   end
 
