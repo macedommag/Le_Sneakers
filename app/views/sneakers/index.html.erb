@@ -6,7 +6,9 @@
         <% @sneakers.each do |sneaker| %>
           <div>
             <div class="card my-4" style="width: 18rem;">
-              <%= cl_image_tag sneaker.photos.first.key, crop: :fill, class: "sneaker-image" %>
+              <% if sneaker.photos.attached? %>
+                <%= cl_image_tag sneaker.photos.first.key, crop: :fill, class: "sneaker-image" %>
+              <% end %>
               <div class="card-body">
                 <h6 class="card-title"><strong>Model:</strong> <%= sneaker.model %></h6>
                 <h6 class="card-title"><strong>Price:</strong> <%= number_to_currency(sneaker.price, unit: "R$", separator: ",", delimiter: "") %></h6>
