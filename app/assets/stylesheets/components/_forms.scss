@@ -2,6 +2,7 @@
   background-color: none;
   display: flex;
   gap: 20px;
+  font-family: 'Roboto Condensed', sans-serif;
 
 }
 .form-img{
@@ -16,4 +17,7 @@
 .form-inputs{
   margin: 0 auto;
   width: 60vw;
+}
+h2{
+  text-transform: uppercase;
 }

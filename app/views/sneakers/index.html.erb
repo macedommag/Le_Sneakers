@@ -1,7 +1,7 @@
 
     <div class="container my-5 sneaker-container">
     <h2>SNEAKERS</h2>
-    <h3><%= link_to "New sneaker", new_sneaker_path, class:"btn btn-danger" %></h3>
+    <h3><%= link_to "New sneaker", new_sneaker_path, class:"btn btn-flat" %></h3>
       <div class="sneakers-grid">
         <% @sneakers.each do |sneaker| %>
           <div>
@@ -10,7 +10,7 @@
               <div class="card-body">
                 <h6 class="card-title"><strong>Model:</strong> <%= sneaker.model %></h6>
                 <h6 class="card-title"><strong>Price:</strong> <%= number_to_currency(sneaker.price, unit: "R$", separator: ",", delimiter: "") %></h6>
-                <p><%= link_to "Details", sneaker_path(sneaker), class:"text-decoration-none" %>
+                <p><%= link_to "Details", sneaker_path(sneaker), class:"text-decoration-none btn btn-flat" %>
               </div>
             </div>
           </div>

@@ -2,8 +2,15 @@
   color: white;
   padding: 8px 24px;
   border-radius: 2px;
-  background: #ec4e83;
-  transition: background 0.3s ease;
+  background: #181818;
+  //transition: background 0.3s ease;
+  //cursor: pointer;
+  font-size: .6875rem;
+  max-width: 100%;
   cursor: pointer;
-  font: 13.28px;
+  text-transform: uppercase;
+
+}
+a:hover{
+  background-color: gray;
 }
