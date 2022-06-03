@@ -33,10 +33,10 @@
         <% if @sneaker.user == current_user %>
           <%= link_to "Delete", sneaker_path(@sneaker), method: :delete,  data: { confirm: 'Are you sure you want delete?' }, class:'btn btn-danger'%>
         <% else %>
-          <%= link_to "Buy", sneaker_orders_path(@sneaker), method: :post, data: { confirm: 'Are you sure you want to buy?' }, class:'btn btn-danger'%>
+          <%= link_to "Buy", sneaker_orders_path(@sneaker), method: :post, data: { confirm: 'Are you sure you want to buy?' }, class:'btn btn-flat'%>
         <% end %>
         <div class="card-body">
-          <%= link_to "Back", root_path, class:"text-decoration-none" %>
+          <%= link_to "Back", sneakers_path, class:"text-decoration-none" %>
         </div>
       </div>
     </div>
