@@ -1,47 +1,42 @@
-<div class="container user-form mt-5">
-  <% if @sneaker.photos.attached? %>
-    <% @sneaker.photos.each do |photo| %>
-    <%#= cl_image_tag photo.key, height: 300, width: 500, crop: :fill %>
-    <% end %>
-  <% end %>
 
-  <div id="sneaker-carousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <% @sneaker.photos.each_with_index do |photo, index| %>
-        <div class="carousel-item <%= 'active' if index.zero? %>">
-          <%= cl_image_tag photo.key, height: 300, width: 500, crop: :fill, class: "d-block w-100" %>
+  <div class="row">
+    <div class="col-6">
+      <% if @sneaker.photos.attached? %>
+        <div id="sneaker-carousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <% @sneaker.photos.each_with_index do |photo, index| %>
+              <div class="carousel-item <%= 'active' if index.zero? %>">
+                <%= cl_image_tag photo.key, height: 300, width: 500, crop: :fill, class: "d-block w-100" %>
+              </div>
+            <% end %>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#sneaker-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#sneaker-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       <% end %>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#sneaker-carousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#sneaker-carousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+    <div class="col-6">
+      <h2> Model: <%=@sneaker.model%></h2>
+      <p><strong> Size: </strong><%=@sneaker.size%></p>
+      <p><strong> Brand: </strong><%=@sneaker.brand%></p>
+      <p><strong> Condition: </strong> <%=@sneaker.condition%></p>
+      <p><strong> Description: </strong><%=@sneaker.description%></p>
+      <p><strong> Amount: </strong><%=@sneaker.amount%></p>
+      <div class="d-flex justify-content-evenly align-items-center">
+        <% if @sneaker.user == current_user %>
+          <%= link_to "Delete", sneaker_path(@sneaker), method: :delete,  data: { confirm: 'Are you sure you want delete?' }, class:'btn btn-danger'%>
+        <% else %>
+          <%= link_to "Buy", sneaker_orders_path(@sneaker), method: :post, data: { confirm: 'Are you sure you want to buy?' }, class:'btn btn-danger'%>
+        <% end %>
+        <div class="card-body">
+          <%= link_to "Back", root_path, class:"text-decoration-none" %>
+        </div>
+      </div>
+    </div>
   </div>
-
-   <div class="container col-md-6">
-    <h2> Model: <%=@sneaker.model%></h2>
-    <p><strong> Size: </strong><%=@sneaker.size%></p>
-    <p><strong> Brand: </strong><%=@sneaker.brand%></p>
-    <p><strong> Condition: </strong> <%=@sneaker.condition%></p>
-    <p><strong> Description: </strong><%=@sneaker.description%></p>
-    <p><strong> Amount: </strong><%=@sneaker.amount%></p>
-  </div>
-</div>
-<br>
- <% if @sneaker.user == current_user %>
-  <%= link_to "Delete", sneaker_path(@sneaker), method: :delete,  data: { confirm: 'Are you sure you want delete?' }, class:'btn btn-danger'%>
-  <% else %>
-  <%= link_to "Buy", sneaker_orders_path(@sneaker), method: :post, data: { confirm: 'Are you sure you want to buy?' }, class:'btn btn-danger'%>
-  <% end %>
-
-  <div class="card-body">
-    <a href="/sneakers" class="text-decoration-none">Back</a>
-  </div>
-</div>
-<br>
-<br>
